@@ -1,8 +1,8 @@
 // app/sign-up/[[...sign-up]]/page.tsx
-'use client'; // This component uses client-side hooks for animation
+"use client"; // This component uses client-side hooks for animation
 
-import { SignUp } from '@clerk/nextjs';
-import { motion } from 'framer-motion';
+import { SignUp } from "@clerk/nextjs";
+import { motion } from "framer-motion";
 
 // A new icon representing a pen nib, fitting the "Ink & Paper" theme
 const PenNibIcon = () => (
@@ -22,7 +22,6 @@ const PenNibIcon = () => (
     <path d="M12 20.5v-8.5"></path>
   </svg>
 );
-
 
 // Main component for the redesigned sign-up page
 export default function Page() {
@@ -46,7 +45,7 @@ export default function Page() {
       opacity: 1,
       transition: {
         duration: 0.4,
-        ease: 'easeOut',
+        ease: "easeOut",
       },
     },
   };
@@ -54,7 +53,7 @@ export default function Page() {
   return (
     <div className="relative flex min-h-screen flex-col items-center justify-center bg-[#F8F5F2] p-4 font-sans">
       {/* Subtle paper texture in the background */}
-      <div className="absolute inset-0 z-0"/>
+      <div className="absolute inset-0 z-0" />
 
       {/* Main Card with Staggered Animations */}
       <motion.div
@@ -79,56 +78,59 @@ export default function Page() {
         </motion.div>
 
         {/* Clerk Sign-Up Component with new light-theme styling */}
-        <motion.div variants={itemVariants} className='flex flex-col items-center'>
+        <motion.div
+          variants={itemVariants}
+          className="flex flex-col items-center"
+        >
           <SignUp
             appearance={{
               baseTheme: undefined, // Ensure no default theme is applied
               variables: {
-                colorPrimary: '#1e3a8a', // A deep ink-blue
-                colorText: '#1f2937', // Charcoal gray
-                colorTextSecondary: '#4b5563', // Lighter gray
-                colorInputBackground: '#f9fafb', // Off-white
-                colorInputText: '#1f2937',
-                fontFamily: 'sans-serif',
+                colorPrimary: "#1e3a8a", // A deep ink-blue
+                colorText: "#1f2937", // Charcoal gray
+                colorTextSecondary: "#4b5563", // Lighter gray
+                colorInputBackground: "#f9fafb", // Off-white
+                colorInputText: "#1f2937",
+                fontFamily: "sans-serif",
               },
               elements: {
                 card: {
-                  backgroundColor: 'transparent',
-                  boxShadow: 'none',
+                  backgroundColor: "transparent",
+                  boxShadow: "none",
                 },
                 formFieldLabel: {
-                  color: '#374151', // Dark gray
-                  fontWeight: '600',
+                  color: "#374151", // Dark gray
+                  fontWeight: "600",
                 },
                 formFieldInput: {
-                  borderColor: '#d1d5db', // Light gray border
-                  borderRadius: '0.25rem',
-                  transition: 'all 0.2s ease-in-out',
-                  '&:focus': {
-                    borderColor: '#1e3a8a',
-                    boxShadow: '0 0 0 1px #1e3a8a',
+                  borderColor: "#d1d5db", // Light gray border
+                  borderRadius: "0.25rem",
+                  transition: "all 0.2s ease-in-out",
+                  "&:focus": {
+                    borderColor: "#1e3a8a",
+                    boxShadow: "0 0 0 1px #1e3a8a",
                   },
                 },
                 formButtonPrimary: {
-                  fontSize: '0.875rem',
-                  textTransform: 'none',
-                  borderRadius: '0.25rem',
-                  transition: 'all 0.2s ease-in-out',
-                  '&:hover': {
-                    transform: 'translateY(-1px)',
-                    boxShadow: '0 4px 12px rgba(0,0,0,0.1)',
+                  fontSize: "0.875rem",
+                  textTransform: "none",
+                  borderRadius: "0.25rem",
+                  transition: "all 0.2s ease-in-out",
+                  "&:hover": {
+                    transform: "translateY(-1px)",
+                    boxShadow: "0 4px 12px rgba(0,0,0,0.1)",
                   },
                 },
                 socialButtonsBlockButton: {
-                  borderColor: '#d1d5db',
-                  borderRadius: '0.25rem',
-                  color: '#374151',
-                  '&:hover': {
-                    backgroundColor: '#f3f4f6',
+                  borderColor: "#d1d5db",
+                  borderRadius: "0.25rem",
+                  color: "#374151",
+                  "&:hover": {
+                    backgroundColor: "#f3f4f6",
                   },
                 },
                 footerActionLink: {
-                  fontWeight: '600',
+                  fontWeight: "600",
                 },
               },
             }}
